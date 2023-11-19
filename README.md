@@ -10,5 +10,4 @@ This repository contains a Python project for automatically resolving pronominal
 - Integration with the NLTK (Natural Language Toolkit) framework
 
 ## Contact Information
-Contact
-For any questions or inquiries, please contact [Hermann SOCKENG] at [hermannsockeng@gmail.com].
+For any questions or inquiries, please contact Hermann SOCKENG at hermannsockeng@gmail.com
