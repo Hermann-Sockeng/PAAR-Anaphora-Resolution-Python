@@ -1,0 +1,76 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper, margin=1.3in}
+\usepackage{comment}
+\usepackage{graphicx}
+
+\title{\textbf{TDR}\\ SYSTÈME DE RÉSOLUTION DE L'ANAPHORE PRONOMINALE ADVERBIALE (PAAR)}
+\author{Hermann SOCKENG\\ Ingénieur en Calcul Scientifique \\ hermannsockeng@gmail.com \and Nelson Leroi SOFAC \\ Doctorant en Linguistique Informatique\\ sofacleroi@gmail.com}
+
+\begin{document}
+	\maketitle
+	
+	\section{Description}
+	L'objectif de ce projet est de lier deux parties d'un discours. L'une des parties est un mot (adverbe pronominal, abrégé en PA) et l'autre partie est une phrase précédant le mot (l'antécédent).
+	
+	Le PA peut être relié aussi bien à la phrase précédente (antécédent) qu'à la phrase qui le suit (postcédant). Lorsque le PA est relié à la phrase précédente, on l'appelle \textbf{anaphore}, et lorsqu'il est relié à la phrase suivante, on l'appelle \textbf{cataphore}.
+	
+	\section{Objectif}
+	L'objectif de ce projet est d'identifier automatiquement les PA dans un paragraphe donné et de déterminer s'ils font référence à un \textbf{antécédent} ou à un \textbf{postcédant}.
+	
+	\section{Sources d'informations existantes}
+	Le processus consistant à déterminer si un PA est un antécédent ou un postcédant a été modélisé par un linguiste au moyen d'un algorithme. Les étapes comprennent :
+	
+	\begin{itemize}
+		\item[\textbf{1.}] \textbf{Algorithme de résolution de l'anaphore pronominale adverbiale.}
+		
+		Cet algorithme établit le lien définitif entre le PA et son antécédent. Il requiert l'utilisation des algorithmes suivants :
+		
+		\begin{itemize}
+			\item[\textbf{1.1.}] Un algorithme qui détecte si le PA a un postcédant, c'est-à-dire s'il s'agit d'une cataphore. Si c'est le cas, on passe au PA suivant ; sinon, on considère ce PA comme ayant un antécédent (l'anaphore). On distingue deux formes de cet algorithme : l'une pour les \textbf{Da-/Hier-PA}, qui identifie les PA suivis d'au plus 3 mots, d'une virgule et d'un des mots suivants : \textbf{dass}, \textbf{ob}, et les \textbf{W-Satz} (environ 40). L'autre forme identifie les PA suivis d'au plus 1 mot et d'une virgule ou de deux points.
+			
+			\item[\textbf{1.2.}] \textbf{Wo-PA}, qui identifie les PA en début de phrases.
+		\end{itemize}
+		
+		L'algorithme général est illustré dans la figure \ref{fig:image}.
+	\end{itemize}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.99\textwidth]{PAAR_IMG.jpg}
+		\caption{Algorithme général de résolution de l'anaphore pronominale adverbiale}
+		\label{fig:image}
+	\end{figure}
+	
+	\section{Aspects méthodologiques}
+	La première étape consiste à \textbf{tokenizer} le texte en phrases et en mots afin d'identifier les PA. Cela nécessite l'utilisation d'un logiciel approprié, notamment \textbf{Python}, qui est l'un des langages de programmation les plus utilisés en linguistique computationnelle et en traitement du langage naturel (NLP).
+	
+	\paragraph{Compréhension du problème}
+	Le problème consiste à classifier automatiquement les adverbes pronominaux d'un texte en langue allemande, comme décrit dans les sections précédentes.
+	
+	\paragraph{Approche analytique}
+	Nous nous basons sur l'algorithme de résolution de l'anaphore pronominal adverbiale fourni par le linguiste, ainsi que surles méthodes prédéfinies en Python, notamment le framework NLTK (Natural Language Toolkit).
+	
+	\paragraph{Données nécessaires et collectées}
+	Au départ, nous avons seulement besoin de la liste des adverbes pronominaux. Une fois les méthodes implémentées, les données de test seront fournies par le linguiste.
+	
+	\paragraph{Évaluation de l'algorithme}
+	Les résultats obtenus sur les données de test fournies par le linguiste seront consignés dans des graphiques.
+	
+	\paragraph{Déploiement du modèle et retour d'expérience}
+	À venir !
+	
+	\section{Participation et responsabilité des parties}
+	Le linguiste et l'ingénieur en calcul scientifique travaillent en collaboration. Le linguiste est principalement chargé de décrire et de présenter les algorithmes basés sur l'exploitation des principes linguistiques, tels que l'algorithme de filtrage des cataphores et l'algorithme de résolution globale. L'ingénieur en calcul scientifique, quant à lui, s'approprie ces méthodes et les implémente en langage informatique.
+	
+	\begin{comment}
+		\newpage
+		- Il s'agit d'un problème de TALN (Traitement Automatique du Langage Naturel).
+		- Python est le langage approprié pour cette tâche.
+		- Techniques de tokenization.
+		\newpage
+		Exo : Identifier les mots qui suivent les adverbes pronominaux.
+	\end{comment}
+	
+\end{document}
